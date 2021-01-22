@@ -1,21 +1,20 @@
 [package]
-
 name = "paste"
-version = "0.0.0"
-authors = [ "Nikita Pekin <contact@nikitapek.in>" ]
+description = "transfer file"
+homepage = "https://github.com/robatipoor/paste-rs"
+repository = "https://github.com/robatipoor/paste-rs"
+keywords = ["paste", "file","transfer"]
+license = "MIT"
+version = "0.0.1"
+authors = ["Nikita Pekin <contact@nikitapek.in> ","Mahdi Robatipoor <mahdi.robatipoor@gmail.com>"]
+edition = "2018"
 
-[[bin]]
+[dependencies]
+async-std = { version = "1.9.0", features = ["attributes"] }
+confy = "0.4.0"
+lazy_static = "1.4.0"
+rand = "0.8.2"
+serde = { version = "1.0.120", features = ["derive"] }
+sqlx = { version = "0.4.2", features = [ "runtime-async-std-native-tls", "mysql" ] }
+tide = "0.15.0"
 
-name = "paste"
-
-[dependencies.nickel]
-
-git = "https://github.com/nickel-org/nickel.rs"
-
-[dependencies.url]
-
-git = "https://github.com/servo/rust-url"
-
-[dependencies.mysql]
-
-git = "https://github.com/Indiv0/rust-mysql-simple"
