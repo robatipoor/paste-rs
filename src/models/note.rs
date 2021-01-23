@@ -42,7 +42,7 @@ impl Note {
     }
 
     pub async fn insert(&self, pool: &MySqlPool) -> crate::Result<()> {
-        let sql = r#"INSERT INTO paste (code,data,time_created,time_updated) VALUES(?,?,?,NULL)"#;
+        let sql = r#"INSERT INTO paste (code,data,time_created) VALUES(?,?,?)"#;
         query(sql)
             .bind(&self.code)
             .bind(&self.data)

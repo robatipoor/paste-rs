@@ -27,7 +27,7 @@ sqlx migrate run
 # show info logs in stdout
 export RUST_LOG=info
 # run app
-./target/release/paste
+paste
 
 ```
 ### client tools
