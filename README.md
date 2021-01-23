@@ -1,5 +1,5 @@
 ## paste-rs 
-[![Build Status](https://travis-ci.org/robatipoor/paste-rs.svg?branch=master)](https://travis-ci.org/robatipoor/pf)
+[![Build Status](https://travis-ci.org/Indiv0/paste-rs.svg?branch=master)](https://travis-ci.org/Indiv0/paste-rs)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ### Setup
