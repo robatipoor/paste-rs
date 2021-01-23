@@ -11,10 +11,13 @@ edition = "2018"
 
 [dependencies]
 async-std = { version = "1.9.0", features = ["attributes"] }
+chrono = "0.4.19"
 confy = "0.4.0"
+env_logger = "0.8.2"
 lazy_static = "1.4.0"
+log = "0.4.13"
 rand = "0.8.2"
 serde = { version = "1.0.120", features = ["derive"] }
-sqlx = { version = "0.4.2", features = [ "runtime-async-std-native-tls", "mysql" ] }
+sqlx = { version = "0.4.2", features = [ "runtime-async-std-native-tls", "mysql","all-types" ] }
 tide = "0.15.0"
 
