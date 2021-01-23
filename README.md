@@ -1,33 +1,34 @@
-# paste-rs [![Build Status](https://travis-ci.org/Indiv0/paste-rs.svg?branch=master)](https://travis-ci.org/Indiv0/paste-rs)
+## paste-rs 
+[![Build Status](https://travis-ci.org/robatipoor/paste-rs.svg?branch=master)](https://travis-ci.org/robatipoor/pf)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Database
+### Setup
+Setup Application:
 
-Setup the database with something like the following:
+```sh
+# install upx and GNU make and git arch linux
+sudo pacman -S make upx git
+# install rust-lang
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# clone project
+git clone github.com/robatipoor/paste-rs
+# build and install
+cd paste-rs
+make
+# copy default config 
+cp config.toml ~/.config/paste-rs/config.toml
+# install sqlx-cli
+cargo install --version=0.2.0 sqlx-cli
+# create database
+export DATABASE_URL="mysql://username:password@localhost:3306/paste_rs"
+sqlx database create
+# run migration
+sqlx migrate run
+# show info logs in stdout
+export RUST_LOG=info
+# run app
+./target/release/paste
 
-```SQL
-CREATE USER 'pasteuser'@'localhost' IDENTIFIED BY 'pastepass';
-
-CREATE DATABASE IF NOT EXISTS paste;
-USE paste;
-CREATE TABLE IF NOT EXISTS paste (
-    id           INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    code         TEXT,
-    time_created TIMESTAMP,
-    data         BLOB
-);
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON paste.paste TO 'pasteuser'@'localhost';
-FLUSH PRIVILEGES;
 ```
-
-## Credits
-
-This project was inspired by [pxqz](https://github.com/Uiri/pxqz) by my friend [Uiri](https://github.com/Uiri).
-
-Additional inspiration (particularly for the nickel.rs routing and layout) from [superlogical/rusty](https://github.com/superlogical/rusty).
-
-Dependencies used:
-
-* [nickel.rs](https://github.com/nickel-org/nickel.rs)
-* [rust-url](https://github.com/servo/rust-url)
-* my fork of [rust-mysql-simple](https://github.com/blackbeam/rust-mysql-simple)
+### client tools
+for client side you can use [pf](https://github.com/robatipoor/pf) 

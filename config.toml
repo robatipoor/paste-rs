@@ -1,0 +1,3 @@
+database_url="mysql://username:password@localhost:3306/paste_rs"
+base_url="http://127.0.0.1:3000"
+random_code_len=8

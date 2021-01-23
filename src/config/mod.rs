@@ -13,5 +13,4 @@ pub struct ConfigApp {
     pub database_url: String,
     pub base_url: String,
     pub random_code_len: usize,
-    pub create_database: bool,
 }
